@@ -7,49 +7,31 @@
 
 ## Overview
 
-Modern web applications follow a **client–server architecture**, where the frontend (client) interacts with a backend server through APIs. This repository demonstrates how frontend applications communicate with backend services using HTTP requests.
+Modern web applications rely on communication between the frontend and backend to exchange data and perform operations. This repository demonstrates how frontend applications interact with backend APIs using HTTP requests.
 
-The goal of this project is to provide clear and practical examples that help developers understand how data flows between the frontend and backend.
+The goal of this project is to provide practical examples and clear explanations of how data flows between client applications and server-side services.
+
+Understanding this communication is essential for developers working with full-stack technologies.
 
 ---
 
 ## Table of Contents
 
-- Architecture Overview  
-- Communication Flow  
-- Technologies Used  
-- HTTP Methods  
-- Fetch API Example  
-- Axios Example  
-- Backend API Example  
-- JSON Data Format  
-- Repository Structure  
-- Learning Goals  
-- Contributing  
+- Architecture Overview
+- Communication Flow
+- Technologies Used
+- HTTP Methods
+- Repository Documentation
+- Learning Goals
+- Contributing
 
 ---
 
 ## Architecture Overview
 
-In a typical web application, the frontend and backend communicate using APIs. The frontend sends requests to the backend, and the backend processes those requests and returns responses.
+Most modern applications follow a client–server architecture.
 
-Frontend examples:
-
-- Web browsers
-- React applications
-- Mobile applications
-
-Backend examples:
-
-- Node.js servers
-- Express APIs
-- Database services
-
----
-
-## Communication Flow
-
-The communication between frontend and backend usually follows this process:
+The frontend acts as the client that sends requests to a backend server. The backend processes those requests, interacts with a database if necessary, and sends a response back to the frontend.
 
 ```
 Frontend Application
@@ -58,21 +40,33 @@ Frontend Application
         ▼
 Backend API Server
         │
-        │ Query
+        │ Database Query
         ▼
 Database
         │
-        │ Response (JSON)
+        │ JSON Response
         ▼
 Frontend Application
 ```
 
-Example simplified flow:
+---
+
+## Communication Flow
+
+A typical request-response cycle looks like this:
 
 ```
-Browser → API Request → Server → Database
+Browser → API Request → Backend Server → Database
         ← JSON Response ←
 ```
+
+Steps involved:
+
+1. The frontend sends an HTTP request to the backend API.
+2. The backend processes the request.
+3. The backend may interact with a database.
+4. The backend returns a response (usually JSON).
+5. The frontend displays the data in the user interface.
 
 ---
 
@@ -103,15 +97,15 @@ Browser → API Request → Server → Database
 
 ## HTTP Methods
 
-HTTP methods define the type of operation performed on the server.
+HTTP methods define how the frontend interacts with the server.
 
-| Method | Description |
-|------|-------------|
-| GET | Retrieve data from the server |
-| POST | Send new data to the server |
+| Method | Purpose |
+|------|---------|
+| GET | Retrieve data |
+| POST | Create new data |
 | PUT | Update existing data |
-| PATCH | Update part of a resource |
-| DELETE | Remove a resource |
+| PATCH | Partially update data |
+| DELETE | Remove data |
 
 Example request:
 
@@ -121,121 +115,17 @@ GET /api/users
 
 ---
 
-## Fetch API Example
+## Repository Documentation
 
-The Fetch API allows JavaScript to send HTTP requests directly from the browser.
+This repository contains several guides explaining different aspects of frontend–backend communication.
 
-Example:
-
-```javascript
-fetch("http://localhost:5000/api/users")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
-```
-
-Explanation:
-
-- `fetch()` sends the HTTP request
-- `response.json()` converts the response to JSON
-- The data can then be used inside the frontend application
-
----
-
-## Axios Example
-
-Axios is a popular JavaScript library used for making HTTP requests.
-
-Example:
-
-```javascript
-import axios from "axios";
-
-axios.get("http://localhost:5000/api/users")
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
-```
-
-Axios simplifies request handling and error management.
-
----
-
-## Backend API Example (Express)
-
-A simple backend API built with Express can respond to frontend requests.
-
-Example:
-
-```javascript
-const express = require("express");
-const app = express();
-
-app.get("/api/users", (req, res) => {
-  res.json([
-    { id: 1, name: "Alice" },
-    { id: 2, name: "Bob" }
-  ]);
-});
-
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
-```
-
-This API sends JSON data that can be consumed by frontend applications.
-
----
-
-## JSON Data Format
-
-Most APIs communicate using JSON because it is lightweight and easy to parse.
-
-Example response:
-
-```json
-{
-  "id": 1,
-  "name": "Alice",
-  "email": "alice@example.com"
-}
-```
-
-Frontend applications use this data to render information in the user interface.
-
----
-
-## Common Use Cases
-
-Frontend–backend communication is used in many real-world applications:
-
-- User authentication systems
-- Dashboard applications
-- E-commerce platforms
-- Social media services
-- REST API integrations
-
----
-
-## Repository Structure
-
-```
-frontend-backend-communication
-│
-├── README.md
-│
-├── backend-example
-│   └── express-server.js
-│
-├── fetch-example
-│   └── fetch-api.js
-│
-└── axios-example
-    └── axios-request.js
-```
+| File | Description |
+|------|-------------|
+| [api-requests.md](api-requests.md) | Examples of GET, POST, PUT, and DELETE API requests |
+| [api-response-handling.md](api-response-handling.md) | How frontend applications handle responses from APIs |
+| [authentication-api.md](authentication-api.md) | Authentication techniques such as token-based authorization |
+| [error-handling.md](error-handling.md) | Handling API errors and failed requests |
+| [form-data-api.md](form-data-api.md) | Sending form data from frontend to backend APIs |
 
 ---
 
@@ -243,11 +133,11 @@ frontend-backend-communication
 
 This repository helps developers understand:
 
-- Client–server architecture
 - How APIs work
 - How frontend applications send requests
 - How backend servers process requests
 - How JSON data is exchanged between systems
+- How to handle API responses and errors
 
 ---
 
@@ -255,7 +145,7 @@ This repository helps developers understand:
 
 Contributions are welcome. Developers can contribute by:
 
-- Adding more API examples
+- Adding more API communication examples
 - Improving documentation
 - Adding authentication examples
 - Adding database integration examples
