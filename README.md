@@ -5,6 +5,14 @@
 ![GitHub issues](https://img.shields.io/github/issues/Chhatrapati-sahu-09/frontend-backend-communication)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Chhatrapati-sahu-09/frontend-backend-communication)
 
+![HTML](https://img.shields.io/badge/HTML-Frontend-orange)
+![CSS](https://img.shields.io/badge/CSS-Styling-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-Programming-yellow)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![Express](https://img.shields.io/badge/Express.js-API-lightgrey)
+![REST API](https://img.shields.io/badge/REST-API-blue)
+![JSON](https://img.shields.io/badge/Data-JSON-black)
+
 ## Overview
 
 Modern web applications rely on communication between the frontend and backend to exchange data and perform operations. This repository demonstrates how frontend applications interact with backend APIs using HTTP requests.
